@@ -1,0 +1,118 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+if = 'has("nvim")'
+on_event = 'InsertEnter'
+hook_add = '''
+    let g:deoplete#enable_at_startup =1
+    inoremap <expr><tab> pumvisible() ? "\<C-n>" :
+        \ neosnippet#expandable_or_jumpable() ?
+        \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
+'''
+on_i = 1
+
+[[plugins]]
+repo = 'fishbullet/deoplete-ruby'
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+on_i = 1
+hook_add='''
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+  nnoremap <silent><buffer><expr> <Esc>
+          \ denite#do_map('quit')
+  nnoremap <silent><buffer><expr> <Space>
+          \ denite#do_map('toggle_select').'j'
+  nnoremap <silent><buffer><expr> <CR>
+          \ denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> o
+          \ denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> s
+          \ denite#do_map('do_action', 'split')
+  nnoremap <silent><buffer><expr> v
+          \ denite#do_map('do_action', 'vsplit')
+  nnoremap <silent><buffer><expr> i
+          \ denite#do_map('open_filter_buffer')
+  nnoremap <silent><buffer><expr> ..
+          \ denite#do_map('move_up_path')
+  nnoremap <silent><buffer><expr> p
+          \ denite#do_map('do_action', 'preview')
+endfunction
+
+call denite#custom#var('file/rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+call denite#custom#var('grep', 'command', ['ag'])
+call denite#custom#var('grep', 'recursive_opts', [])
+call denite#custom#var('grep', 'pattern_opt', [])
+call denite#custom#var('grep', 'default_opts', ['--follow', '--no-group', '--no-color'])
+
+" ファイル一覧
+nnoremap <silent> <space>f :<C-u>Denite file/rec<CR>
+" カーソル文字検索
+nnoremap <silent> <space>g :<C-u>DeniteCursorWord grep -split=floating<CR>
+" Grep検索
+nnoremap <silent> <space>r :<C-u>Denite grep<CR>
+" バッファ一覧
+nnoremap <silent> <space>m :<C-u>Denite file_mru<CR>
+nnoremap <silent> <space>b :<C-u>Denite buffer<CR>
+nnoremap <silent> <space>y :<C-u>Denite neoyank<CR>
+nnoremap <silent> <space>u :<C-u>Denite outline<CR>
+'''
+
+[[plugins]]
+repo = 'alvan/vim-closetag'
+
+[[plugins]]
+repo = 'vim-ruby/vim-ruby'
+
+[[plugins]]
+repo = 'tpope/vim-rails'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+
+[[plugins]]
+repo = 'Shougo/neocomplcache'
+
+[[plugins]]
+repo = 'Shougo/neosnippet'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+
+[[plugins]]
+repo = 'slim-template/vim-slim'
+
+[[plugins]]
+repo = 'dense-analysis/ale'
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+
+[[plugins]]
+repo = 'ianks/vim-tsx'
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+
+# --------------------------------------------
+#  NeoYank
+# --------------------------------------------
+[[plugins]]
+repo = 'Shougo/neoyank.vim'
+on_path = '.*'
+on_event = 'BufEnter'
+
+[[plugins]]
+repo = 'ncm2/float-preview.nvim'
+hook_add = '''
+  let g:float_preview#docked = 1
+'''
