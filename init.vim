@@ -14,6 +14,7 @@ if dein#load_state('~/.cache/dein')
   call dein#begin('~/.cache/dein')
   call dein#load_toml('~/.config/nvim/dein.toml', {'lazy': 0})
   call dein#load_toml('~/.config/nvim/dein_lazy.toml', {'lazy': 1})
+
   call dein#end()
   call dein#save_state()
 endif
@@ -21,7 +22,6 @@ endif
 " if dein#check_install()
 "  call dein#install()
 " endif
-
 
 " Required:
 filetype plugin indent on
@@ -56,6 +56,10 @@ let mapleader = "\<Space>"
 
 nmap <C-P> :prev<CR>
 nmap <C-N> :next<CR>
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
 
 " 2-1 Rubocop
 let g:ale_fixers = {
@@ -64,15 +68,6 @@ let g:ale_fixers = {
 let g:ale_linters = {
       \ 'ruby': ['rubocop'],
       \ }
-
-"----------------------------------------
-" vim-ref
-"----------------------------------------
-let g:ref_open                    = 'split'
-let g:ref_refe_cmd                = expand('~/.vim/ref/ruby-ref1.9.2/refe-1_9_2')
-
-nnoremap rr :<C-U>Unite ref/refe     -default-action=split -input=
-nnoremap ri :<C-U>Unite ref/ri       -default-action=split -input=
 
 aug MyAutoCmd
   au FileType ruby,eruby,ruby.rspec nnoremap <silent><buffer>KK :<C-U>Unite -no-start-insert ref/ri   -input=<C-R><C-W><CR>
