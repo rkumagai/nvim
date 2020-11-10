@@ -14,6 +14,8 @@ if dein#load_state('~/.cache/dein')
   call dein#begin('~/.cache/dein')
   call dein#load_toml('~/.config/nvim/dein.toml', {'lazy': 0})
   call dein#load_toml('~/.config/nvim/dein_lazy.toml', {'lazy': 1})
+  call dein#add('junegunn/fzf', {'build': './install --all'})
+  call dein#add('junegunn/fzf.vim')
 
   call dein#end()
   call dein#save_state()
@@ -114,4 +116,10 @@ map <Leader>@ :call RunCurrentSpecFile()<CR>
 " tpope/vim-dispatch
 "----------------------------------------
 let g:rspec_command = "Dispatch ~/.rbenv/shims/rspec {spec}"
+
+"----------------------------------------
+" tpope/vim-dispatch
+"----------------------------------------
+nnoremap <silent> <space>f :<C-u>Files<CR>
+nnoremap <silent> <space>g :<C-u>GFiles<CR>
 

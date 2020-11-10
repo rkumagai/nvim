@@ -49,11 +49,11 @@ call denite#custom#var('grep', 'pattern_opt', [])
 call denite#custom#var('grep', 'default_opts', ['--follow', '--no-group', '--no-color'])
 
 " ファイル一覧
-" nnoremap <silent> <space>f :<C-u>Denite file/rec<CR> " to fzf
+" nnoremap <silent> <space>f :<C-u>Denite file/rec<CR>
 " カーソル文字検索
 nnoremap <silent> <space>r :<C-u>DeniteCursorWord grep -split=floating<CR>
 " Grep検索
-" nnoremap <silent> <space>g :<C-u>Denite grep<CR> " to fzf
+" nnoremap <silent> <space>g :<C-u>Denite grep<CR>
 " バッファ一覧
 nnoremap <silent> <space>m :<C-u>Denite file_mru<CR>
 nnoremap <silent> <space>b :<C-u>Denite buffer<CR>
@@ -103,6 +103,12 @@ repo = 'ianks/vim-tsx'
 [[plugins]]
 repo = 'cespare/vim-toml'
 
+[[plugins]]
+repo = 'thoughtbot/vim-rspec'
+
+[[plugins]]
+repo = 'tpope/vim-dispatch'
+
 # --------------------------------------------
 #  NeoYank
 # --------------------------------------------
@@ -117,20 +123,4 @@ hook_add = '''
   let g:float_preview#docked = 1
 '''
 
-[[plugins]]
-repo = 'thoughtbot/vim-rspec'
-
-[[plugins]]
-repo = 'tpope/vim-dispatch'
-
-[[plugins]]
-repu = 'junegunn/fzf'
-build = './install --all'
-
-[[plugins]]
-repo = 'junegunn/fzf.vim'
-hook_add='''
-nnoremap <silent> <space>f :<C-u>Files<CR>
-nnoremap <silent> <space>g :<C-u>GFiles<CR>
-'''
 
