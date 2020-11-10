@@ -118,7 +118,13 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'junegunn/fzf'
+repo = 'thoughtbot/vim-rspec'
+
+[[plugins]]
+repo = 'tpope/vim-dispatch'
+
+[[plugins]]
+repu = 'junegunn/fzf'
 build = './install --all'
 
 [[plugins]]

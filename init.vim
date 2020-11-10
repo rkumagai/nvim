@@ -100,3 +100,18 @@ nmap <Leader>n <Plug>(easymotion-t)
 "----------------------------------------
 autocmd BufRead,BufNewFile *.slim setfiletype slim
 
+"----------------------------------------
+" thoughtbot/vim-rspec
+"----------------------------------------
+
+let g:rspec_command = "!~/.rbenv/shims/rspec {spec}"
+map <Leader>@ :call RunCurrentSpecFile()<CR>
+" map <Leader>s :call RunNearestSpec()<CR>
+" map <Leader>l :call RunLastSpec()<CR>
+" map <Leader>a :call RunAllSpecs()<CR>
+
+"----------------------------------------
+" tpope/vim-dispatch
+"----------------------------------------
+let g:rspec_command = "Dispatch ~/.rbenv/shims/rspec {spec}"
+
