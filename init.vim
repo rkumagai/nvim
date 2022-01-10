@@ -63,13 +63,7 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
-" 2-1 Rubocop
-let g:ale_fixers = {
-      \ 'ruby': ['rubocop'],
-      \ }
-let g:ale_linters = {
-      \ 'ruby': ['rubocop'],
-      \ }
+autocmd BufNewFile,BufRead *.jb  set filetype=ruby
 
 aug MyAutoCmd
   au FileType ruby,eruby,ruby.rspec nnoremap <silent><buffer>KK :<C-U>Unite -no-start-insert ref/ri   -input=<C-R><C-W><CR>
@@ -108,9 +102,9 @@ autocmd BufRead,BufNewFile *.slim setfiletype slim
 
 let g:rspec_command = "!~/.rbenv/shims/rspec {spec}"
 map <Leader>@ :call RunCurrentSpecFile()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
 " map <Leader>s :call RunNearestSpec()<CR>
 " map <Leader>l :call RunLastSpec()<CR>
-" map <Leader>a :call RunAllSpecs()<CR>
 
 "----------------------------------------
 " tpope/vim-dispatch
@@ -118,8 +112,11 @@ map <Leader>@ :call RunCurrentSpecFile()<CR>
 let g:rspec_command = "Dispatch ~/.rbenv/shims/rspec {spec}"
 
 "----------------------------------------
-" tpope/vim-dispatch
+" junegunn/fzf
 "----------------------------------------
 nnoremap <silent> <space>f :<C-u>Files<CR>
-nnoremap <silent> <space>g :<C-u>GFiles<CR>
+nnoremap <silent> <space>g :<C-u>Rg<CR>
+nnoremap <silent> <space>b :<C-u>Buffers<CR>
+nnoremap <silent> <space>r :Ag <C-R><C-W><CR>
+
 
