@@ -75,6 +75,15 @@ aug MyAutoCmd
   au FileType ruby,eruby,ruby.rspec nnoremap <silent><buffer>K  :<C-U>Unite -no-start-insert ref/refe -input=<C-R><C-W><CR>
 aug END
 
+
+"----------------------------------------
+" US Keyboard
+"----------------------------------------
+nnoremap ; :
+nnoremap : ;
+vnoremap : :
+vnoremap : ;
+
 "----------------------------------------
 " Neosnipets
 "----------------------------------------
