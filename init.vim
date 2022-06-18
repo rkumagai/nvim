@@ -37,6 +37,11 @@ highlight PmenuSel ctermfg=white ctermbg=gray
 highlight PmenuSbar ctermbg=gray guibg=gray 
 highlight PmenuThumb ctermbg=gray guibg=gray
 
+nnoremap ; :
+nnoremap : ;
+vnoremap ; :
+vnoremap : ;
+
 " ポップアップを半透明にする
 set termguicolors
 set pumblend=15
