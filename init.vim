@@ -7,7 +7,7 @@ endif
 " Required:
 set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
-let g:python3_host_prog = '/Users/kumagai/opt/anaconda3/bin/python3'
+let g:python3_host_prog = '/Users/rkumagai/.config/brew/bin/python3:'
 
 " Required:
 if dein#load_state('~/.cache/dein')
@@ -16,7 +16,7 @@ if dein#load_state('~/.cache/dein')
   call dein#load_toml('~/.config/nvim/dein_lazy.toml', {'lazy': 1})
   call dein#add('junegunn/fzf', {'build': './install --all'})
   call dein#add('junegunn/fzf.vim')
-
+ 
   call dein#end()
   call dein#save_state()
 endif
@@ -58,6 +58,7 @@ set noexpandtab
 set et ts=2 sw=2 cindent
 
 set path+=app/runners/*/*
+set clipboard+=unnamedplus
 
 let mapleader = "\<Space>"
 
